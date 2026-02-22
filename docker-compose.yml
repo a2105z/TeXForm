@@ -1,0 +1,13 @@
+# TeXForm: API + React frontend (served by FastAPI)
+# Build: docker-compose up --build
+# Run:   docker-compose up
+# App:   http://localhost:8000
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - MATHPIX_APP_ID=${MATHPIX_APP_ID:-}
+      - MATHPIX_APP_KEY=${MATHPIX_APP_KEY:-}

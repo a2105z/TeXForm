@@ -1,0 +1,27 @@
+# TeXForm: Handwritten Notes → LaTeX
+# Install with: pip install -r requirements.txt
+
+# API (FastAPI)
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# Handwriting OCR (TrOCR)
+torch>=2.0.0
+transformers>=4.30.0
+
+# Images and PDF
+Pillow>=9.5.0
+pymupdf>=1.23.0
+numpy>=1.24.0
+
+# Math recognition: MathPix API (paid) and/or Pix2Text (free, optional)
+requests>=2.28.0
+# Optional: free offline math/formula recognition when MathPix is not configured
+pix2text>=1.0.0
+
+# Config
+PyYAML>=6.0
+
+# Tests
+pytest>=7.0.0
