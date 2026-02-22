@@ -7,8 +7,8 @@ uvicorn[standard]>=0.24.0
 python-multipart>=0.0.6
 
 # Handwriting OCR (TrOCR)
-torch>=2.0.0
-transformers>=4.30.0
+torch>=2.1.0
+transformers>=4.36.0
 
 # Images and PDF
 Pillow>=9.5.0

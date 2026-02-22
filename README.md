@@ -1,3 +1,13 @@
+---
+title: TeXForm
+emoji: "\U0001F4DD"
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+app_port: 7860
+---
+
 # TeXForm: Handwritten Notes → LaTeX
 
 TeXForm turns handwritten notes (PDF or images) into LaTeX documents. Upload a PDF or image — the app segments text lines, runs handwriting OCR (TrOCR), detects math (MathPix or Pix2Text), and assembles a LaTeX document you can download as `.tex` or compiled PDF.

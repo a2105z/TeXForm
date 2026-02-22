@@ -1,5 +1,18 @@
+import importlib.machinery
 import os
+import sys
 from typing import List, Optional
+
+# Block TensorFlow before any transformers/torchvision import to avoid
+# the ml_dtypes "handle" crash on systems where TF is installed.
+if "tensorflow" not in sys.modules:
+    _fake_tf = type(sys)("tensorflow")
+    _fake_tf.__version__ = "0.0.0"
+    _fake_tf.__spec__ = importlib.machinery.ModuleSpec("tensorflow", None)
+    sys.modules["tensorflow"] = _fake_tf
+
+os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
+os.environ.setdefault("USE_TORCH", "1")
 
 import numpy as np
 import torch

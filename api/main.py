@@ -1,9 +1,23 @@
 """
 TeXForm API: upload a PDF or image, get back LaTeX and optional PDF.
 """
-# Prevent transformers from loading TensorFlow (avoids ml_dtypes "handle" conversion errors)
 import os
+import sys
+
 os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
+os.environ.setdefault("USE_TORCH", "1")
+
+# Block TensorFlow from being imported by transformers.
+# Even with TRANSFORMERS_NO_TF=1, some versions of transformers unconditionally
+# import TF in image_transforms.py, hitting the ml_dtypes "handle" crash.
+# The stub needs __spec__ so torch._dynamo.trace_rules doesn't crash on find_spec().
+if "tensorflow" not in sys.modules:
+    _fake_tf = type(sys)("tensorflow")
+    _fake_tf.__version__ = "0.0.0"
+    _fake_tf.__spec__ = None  # torch.dynamo may inspect this; None is fine in newer PyTorch
+    import importlib
+    _fake_tf.__spec__ = importlib.machinery.ModuleSpec("tensorflow", None)
+    sys.modules["tensorflow"] = _fake_tf
 
 import base64
 import logging
