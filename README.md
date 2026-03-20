@@ -13,6 +13,10 @@ suggested_hardware: cpu-basic
 
 TeXForm turns handwritten notes (PDF or images) into LaTeX documents. Upload a PDF or image — the app segments text lines, runs handwriting OCR (TrOCR), detects math (MathPix or Pix2Text), and assembles a LaTeX document you can download as `.tex` or compiled PDF.
 
+## Live Demo
+
+**[→ Try TeXForm on Hugging Face Spaces](https://huggingface.co/spaces/amittal417/texform)** (free, no install required)
+
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/a2105z/TeXForm)
 
 ## Features
@@ -24,6 +28,20 @@ TeXForm turns handwritten notes (PDF or images) into LaTeX documents. Upload a P
 - **Single LaTeX document** with download as `.tex` or PDF
 - **Modern React frontend** + FastAPI backend
 - **Docker ready** — one-command deployment
+
+## Hosting & Technical Details
+
+| Aspect | Details |
+|--------|---------|
+| **Live URL** | [huggingface.co/spaces/amittal417/texform](https://huggingface.co/spaces/amittal417/texform) |
+| **Host** | Hugging Face Spaces (Docker, free CPU tier) |
+| **Frontend** | React 18 + Vite 6 |
+| **Backend** | FastAPI (Python 3.11) |
+| **OCR** | TrOCR (`microsoft/trocr-base-handwritten`) |
+| **Math** | Pix2Text (free) or MathPix API (optional) |
+| **LaTeX** | TeX Live (pdflatex/latexmk) |
+
+The app runs on Hugging Face Spaces with 2 vCPU, 16 GB RAM. Processing is CPU-only on the free tier; expect 30–90 seconds per page. The Space may sleep after 48 hours of inactivity.
 
 ## Quick deploy
 
