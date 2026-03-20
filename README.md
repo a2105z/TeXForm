@@ -6,6 +6,7 @@ colorTo: purple
 sdk: docker
 pinned: false
 app_port: 7860
+suggested_hardware: cpu-basic
 ---
 
 # TeXForm: Handwritten Notes → LaTeX
@@ -34,16 +35,15 @@ Click the button above, or go to:
 https://render.com/deploy?repo=https://github.com/a2105z/TeXForm
 ```
 
-### Deploy to Hugging Face Spaces
+### Deploy to Hugging Face Spaces (free)
 
 1. Create a new Space at [huggingface.co/new-space](https://huggingface.co/new-space) — select **Docker** as the SDK
-2. Clone this repo and push to the Space:
+2. Push this repo to the Space:
    ```bash
-   git clone https://github.com/a2105z/TeXForm.git
-   cd TeXForm
    git remote add hf https://huggingface.co/spaces/YOUR_USERNAME/texform
    git push hf main
    ```
+3. See [DEPLOY_HF.md](DEPLOY_HF.md) for detailed step-by-step instructions.
 
 ## Prerequisites (local development)
 
