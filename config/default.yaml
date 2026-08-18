@@ -1,0 +1,49 @@
+# config/default.yaml
+
+# PDF conversion settings
+pdf_utils:
+  # Resolution (dots per inch) for converting PDF pages to images
+  dpi: 200
+
+# Handwriting OCR settings
+ocr_engine:
+  # Model identifier for TrOCR
+  model_name: "microsoft/trocr-base-handwritten"
+  # Maximum tokens to generate from OCR
+  max_length: 512
+  # Beam search width for text generation
+  num_beams: 4
+  # Device to run model on ("cpu" or "cuda"); empty for auto-detect
+  device: ""
+
+# Math recognition settings
+math_recognition:
+  # MathPix API endpoint (paid; optional)
+  api_url: "https://api.mathpix.com/v3/latex"
+  # Include LaTeX output from API
+  include_latex: true
+  # Include MathML output from API
+  include_mathml: false
+  # Timeout in seconds for API calls
+  timeout: 30
+  # When MathPix is not configured, use free offline backend (Pix2Text) if installed
+  use_free_backend: true
+
+# LaTeX document generation settings
+latex_generator:
+  # Document class and options
+  document_class: "article"
+  font_size: "12pt"
+  # Page geometry options
+  page_geometry:
+    margin: "1in"
+  # Default metadata
+  title: "Converted Notes"
+  author: ""
+  date: "\\today"
+  # Use latexmk if available; otherwise fallback to pdflatex
+  use_latexmk: true
+
+# Logging configuration
+logging:
+  level: "INFO"

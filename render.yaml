@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: texform
+    runtime: docker
+    plan: free
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: TRANSFORMERS_NO_TF
+        value: "1"
+      - key: MATHPIX_APP_ID
+        sync: false
+      - key: MATHPIX_APP_KEY
+        sync: false

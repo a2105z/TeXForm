@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv
+ENV
+*.egg-info
+.pytest_cache
+.coverage
+htmlcov
+
+# Tests (not needed in production image)
+tests/
+
+# IDE and OS
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+*.log
+
+# Documentation (optional - include if you want)
+# docs/
+
+# Misc
+PUSH_TO_GITHUB.md
+*.md
+!README.md

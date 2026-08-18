@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Frontend (handled by frontend/.gitignore)
+# node_modules/ and dist/ are in frontend/.gitignore
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.synctex.gz
